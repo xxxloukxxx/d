@@ -1,0 +1,51 @@
+! Font options - ~/.fonts.conf seems to override this
+! Resolution for Xft in dots per inch (e.g. 96)
+Xft.dpi:       96
+! Type of subpixel antialiasing (none, rgb, bgr, vrgb or vbgr)
+Xft.rgba:      rgba
+Xft.antialias: 1
+Xft.hinting:   1
+Xft.autohint:  1
+! What degree of hinting to use (hintnone, hintslight, hintmedium, or hintfull)
+Xft.hintstyle: hintslight
+
+Xcursor.size: 48
+
+xterm*faceName: hack-12
+
+! xterm
+xterm*dynamiccolors:      true
+xterm*utf8:               2
+xterm*geometry:           WINDOWGEOMETRY
+xterm*visualBell:         off
+xterm*highlightSelection: true
+!xterm*background:      lightblack
+!xterm*foreground:      lightblue
+!xterm*colorMode:       on
+!xterm*colorBD:         lightcyan
+!xterm*colorBDMode:     on
+!xterm*colorUL:         white
+!xterm*colorULMode:     on
+xterm*scrollTtyOutput: false
+xterm*scrollKey:       true
+!xterm*scrollBar:       true
+
+! Dracula Xresources palette
+*.foreground: #F8F8F2
+*.background: #282A36
+*.color0:     #000000
+*.color8:     #4D4D4D
+*.color1:     #FF5555
+*.color9:     #FF6E67
+*.color2:     #50FA7B
+*.color10:    #5AF78E
+*.color3:     #F1FA8C
+*.color11:    #F4F99D
+*.color4:     #BD93F9
+*.color12:    #CAA9FA
+*.color5:     #FF79C6
+*.color13:    #FF92D0
+*.color6:     #8BE9FD
+*.color14:    #9AEDFE
+*.color7:     #BFBFBF
+*.color15:    #E6E6E6

@@ -20,6 +20,7 @@ all:
 	cp -fr .vimrc ~/
 	cp -fr .zshrc ~/
 	cp -fr .xinitrc ~/
+	cp -fr .Xresources ~/
 
 	echo "\n>>> Install dwm, st and friends"
 	sudo make -C dev clean install --silent

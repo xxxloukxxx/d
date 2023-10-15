@@ -1,3 +1,7 @@
+#!/bin/bash
+
+[[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+
 #xrandr --output VGA-1 --rotation left
 
 systemctl --user import-environment DISPLAY XAUTHORITY

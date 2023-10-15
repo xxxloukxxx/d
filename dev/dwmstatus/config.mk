@@ -29,15 +29,6 @@ LDFLAGS = -s ${LIBS}
 # compiler and linker
 CC = cc
 
-# mpd & alsa
-#MPDLIB   =  -lmpdclient
-#MPDFLAG  =  -DMPD
+LIBS = -L/usr/lib -lc -L${X11LIB} -lX11
 
-#ALSALIB   =  -lasound
-PULSELIB   =  -lpulse
-PULSEFLAG   =  -libs
-
-#LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${MPDLIB} ${ALSALIB}
-LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${MPDLIB} ${PULSELIB}
-
-CPPFLAGS = ${MPDFLAG} ${PULSEFLAG} -DVERSION=\"${VERSION}\"
+CPPFLAGS = -DVERSION=\"${VERSION}\"

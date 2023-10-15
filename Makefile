@@ -18,6 +18,7 @@ all:
 	fc-cache -r
 	cp -fr .vimrc ~/
 	cp -fr .zshrc ~/
+	cp -fr .xinitrc ~/
 
 	echo "\n>>> Install dwm, st and friends"
 	sudo make -C dev clean install --silent

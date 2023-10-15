@@ -25,4 +25,7 @@ all:
 	echo "\n>>> Install dwm, st and friends"
 	sudo make -C dev clean install --silent
 
+	echo "\n>>> Change Shell to zsh"
+	chsh -s /bin/zsh
+
 .SILENT:

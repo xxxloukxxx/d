@@ -14,6 +14,7 @@ all:
 	
 	echo "\n>>> Copy .zshrc, .vimrc and friends to ~/"
 	cp -fr .w ~/
+	cp -fr .dwm ~/
 	cp -fr .fonts ~/
 	fc-cache -r
 	cp -fr .vimrc ~/

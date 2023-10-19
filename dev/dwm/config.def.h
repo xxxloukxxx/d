@@ -52,7 +52,7 @@ static const Layout layouts[] = {
 #define MODKEY Mod4Mask
 #define TAGKEYS(KEY, TAG)                  \
 	{MODKEY, KEY, view, {.ui = 1 << TAG}}, \
-		{MODKEY | ShiftMask, KEY, tag, {.ui = 1 << TAG}}, //\
+	{MODKEY | ShiftMask, KEY, tag, {.ui = 1 << TAG}}, //\
 //	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
 //	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
 
@@ -69,6 +69,9 @@ static const char *termcmd[] = {"st", NULL};
 static const char *shutdowncmd[] = {"/home/cedric/.dwm/powermenu.sh", NULL};
 static const char *pavucmd[] = {"pavucontrol", NULL};
 static const char *flamecmd[] = {"flameshot", "gui", NULL};
+
+static const char scratchpadname[] = "scratchpad";
+static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
 
 /*
 Volume by multimedia keys
@@ -87,17 +90,19 @@ static const Key keys[] = {
 	{0, 122, spawn, {.v = downvol}},								   // 122
 	{0, 123, spawn, {.v = upvol}},									   // 123
 	{MODKEY, 33, spawn, {.v = dmenucmd}},							   // p
+	{MODKEY, 40, spawn, {.v = dmenucmd}},							   // d
 	{MODKEY | ShiftMask, 36, spawn, {.v = termcmd}},				   // Return
 	{MODKEY | ControlMask | ShiftMask, 22, spawn, {.v = shutdowncmd}}, // BS
 	{MODKEY | ControlMask | ShiftMask, 33, spawn, {.v = pavucmd}},	   // p
-	{MODKEY | ControlMask | ShiftMask, 39, spawn, {.v = flamecmd}},	   // p
+	{MODKEY | ControlMask | ShiftMask, 39, spawn, {.v = flamecmd}},	   // s
+	{MODKEY, 9, togglescratch, {.v = scratchpadcmd }},
 	{MODKEY, 56, togglebar, {0}},									   // b
 	{MODKEY, 44, focusstack, {.i = +1}},							   // j
 	{MODKEY, 45, focusstack, {.i = -1}},							   // k
 	{MODKEY, 113, focusstack, {.i = +1}},							   // j
 	{MODKEY, 114, focusstack, {.i = -1}},							   // k
 	{MODKEY, 31, incnmaster, {.i = +1}},							   // i
-																	   //	{ MODKEY,               40,     incnmaster,     {.i = -1 } },   // d
+ //	{ MODKEY,               40,     incnmaster,     {.i = -1 } },   // d
 	{MODKEY, 43, setmfact, {.f = -0.05}},							   // h
 	{MODKEY, 46, setmfact, {.f = +0.05}},							   // l
 	{MODKEY, 36, zoom, {0}},										   // Return
@@ -108,8 +113,8 @@ static const Key keys[] = {
 	{MODKEY, 58, setlayout, {.v = &layouts[2]}},					   // m
 	{MODKEY, 65, setlayout, {0}},									   // space
 	{MODKEY | ShiftMask, 65, togglefloating, {0}},					   // space
-																	   //	{ MODKEY,               19,     view,           {.ui = ~0 } },  // 0
-																	   //	{ MODKEY|ShiftMask,     19,     tag,            {.ui = ~0 } },  // 0
+//	{ MODKEY,               19,     view,           {.ui = ~0 } },  // 0
+//	{ MODKEY|ShiftMask,     19,     tag,            {.ui = ~0 } },  // 0
 	{MODKEY, 59, focusmon, {.i = -1}},								   // comma
 	{MODKEY, 60, focusmon, {.i = +1}},								   // period
 	{MODKEY | ShiftMask, 59, tagmon, {.i = -1}},					   // comma

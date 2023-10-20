@@ -89,9 +89,9 @@ static const Key keys[] = {
 	{0, 121, spawn, {.v = mutevol}},								   // 121
 	{0, 122, spawn, {.v = downvol}},								   // 122
 	{0, 123, spawn, {.v = upvol}},									   // 123
-	{MODKEY, 33, spawn, {.v = dmenucmd}},							   // p
+//	{MODKEY, 33, spawn, {.v = dmenucmd}},							   // p
 	{MODKEY, 40, spawn, {.v = dmenucmd}},							   // d
-	{MODKEY | ShiftMask, 36, spawn, {.v = termcmd}},				   // Return
+	{MODKEY, 36, spawn, {.v = termcmd}},				   // Return
 	{MODKEY | ControlMask | ShiftMask, 22, spawn, {.v = shutdowncmd}}, // BS
 	{MODKEY | ControlMask | ShiftMask, 33, spawn, {.v = pavucmd}},	   // p
 	{MODKEY | ControlMask | ShiftMask, 39, spawn, {.v = flamecmd}},	   // s
@@ -105,7 +105,7 @@ static const Key keys[] = {
  //	{ MODKEY,               40,     incnmaster,     {.i = -1 } },   // d
 	{MODKEY, 43, setmfact, {.f = -0.05}},							   // h
 	{MODKEY, 46, setmfact, {.f = +0.05}},							   // l
-	{MODKEY, 36, zoom, {0}},										   // Return
+	{MODKEY | ShiftMask, 36, zoom, {0}},										   // Return
 	{MODKEY, 23, view, {0}},										   // Tab
 	{MODKEY | ShiftMask, 54, killclient, {0}},						   // c
 	{MODKEY, 28, setlayout, {.v = &layouts[0]}},					   // t

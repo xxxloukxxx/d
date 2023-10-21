@@ -2,7 +2,7 @@
 
 function powermenu {
     options="Shutdown\nReboot\nLock"
-    selected=$(echo -e $options | dmenu -b -i -fn "Inconsolata:size=12")
+    selected=$(echo -e $options | dmenu -b -i)
 
     if [[ $selected = "Shutdown" ]]; then sudo poweroff
     elif [[ $selected = "Reboot" ]]; then sudo reboot

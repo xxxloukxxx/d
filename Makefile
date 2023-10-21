@@ -4,7 +4,7 @@ all:
 	sudo apt -qq -y full-upgrade
 
 	echo "\n>>> Install zsh, vim and friends"
-	sudo apt -qq -y install zsh vim curl wget xorg micro nnn greetd xinit feh tmux fonts-hack fonts-hack-otf fonts-hack-ttf fonts-hack-web fonts-font-awesome fonts-terminus-otb x11-utils libreadline-dev libx11-dev libxinerama-dev libxft-dev numlockx fzf fd-find bat tree ripgrep btop locales-all build-essential gcc
+	sudo apt -qq -y install zsh vim curl wget xorg micro nnn greetd xinit feh tmux fonts-hack fonts-hack-otf fonts-hack-ttf fonts-hack-web fonts-font-awesome fonts-terminus-otb x11-utils libreadline-dev libx11-dev libxinerama-dev libxft-dev numlockx fzf fd-find bat tree ripgrep btop locales-all build-essential gcc rsstail
 	wget "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
 	chmod +x ./install.sh
 	./install.sh --unattended

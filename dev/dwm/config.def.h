@@ -10,8 +10,8 @@ static const unsigned int systrayonleft = 0;    /* 0: systray in the right corne
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;        /* 0 means no systray */
-static const char *fonts[] = {"agave:size=14"};
-static const char dmenufont[] = "agave:size=14";
+static const char *fonts[] = {"agave:size=16"};
+static const char dmenufont[] = "agave:size=16";
 static const char col_gray1[] = "#222222";
 static const char col_gray2[] = "#444444";
 static const char col_gray3[] = "#bbbbbb";

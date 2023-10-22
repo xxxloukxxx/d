@@ -4,7 +4,8 @@ SUBDIRS := $(wildcard */.)
 
 $(TOPTARGETS): $(SUBDIRS)
 $(SUBDIRS):
-	@echo "  > Make and install ... $@"
+	@echo "  > Make $(MAKECMDGOALS) ... $@"
 	@$(MAKE) -C $@ $(MAKECMDGOALS)
 
 .PHONY: $(TOPTARGETS) $(SUBDIRS)
+

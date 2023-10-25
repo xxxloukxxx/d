@@ -7,7 +7,7 @@
 //static char *font = "Hack:size=12";
 //static char *font = "Inconsolata:size=12";
 //static char *font = "terminus:pixelsize=18:antialias=true:autohint=true";
-static char *font = "agave:size=16";
+static char *font = "agave:size=14";
 static int borderpx = 2;
 
 /*
@@ -18,7 +18,7 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/sh";
+static char *shell = "/bin/zsh";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;

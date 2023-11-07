@@ -102,15 +102,16 @@ static const Key keys[] = {
     {MODKEY, 45, focusstack, {.i = -1}},							   // k
     {MODKEY, 113, focusstack, {.i = +1}},							   // j
     {MODKEY, 114, focusstack, {.i = -1}},							   // k
-    {MODKEY, 31, incnmaster, {.i = +1}},							   // i
+    {MODKEY, 55, incnmaster, {.i = +1}},							   // v
 //	{ MODKEY,               40,     incnmaster,     {.i = -1 } },      // d
     {MODKEY, 43, setmfact, {.f = -0.05}},							   // h
     {MODKEY, 46, setmfact, {.f = +0.05}},							   // l
     {MODKEY | ShiftMask, 36, zoom, {0}},							   // Return
     {MODKEY, 23, view, {0}},										   // Tab
     {MODKEY | ShiftMask, 54, killclient, {0}},						   // c
-    {MODKEY | ShiftMask, 28, setlayout, {.v = &layouts[0]}},		   // t
     {MODKEY | ShiftMask, 41, setlayout, {.v = &layouts[1]}},		   // f
+    {MODKEY | ShiftMask, 56, setlayout, {.v = &layouts[1]}},		   // b
+    {MODKEY | ShiftMask, 57, setlayout, {.v = &layouts[0]}},		   // n
     {MODKEY | ShiftMask, 58, setlayout, {.v = &layouts[2]}},		   // m
     {MODKEY, 65, setlayout, {0}},									   // space
     {MODKEY | ShiftMask, 65, togglefloating, {0}},					   // space

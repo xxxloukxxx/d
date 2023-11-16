@@ -18,6 +18,7 @@ all:
 	cp -fr .fonts ~/
 	fc-cache -r
 	cp -fr .vimrc ~/
+	cp -fr .moc ~/
 	cp -fr .zshrc ~/
 	cp -fr .xinitrc ~/
 	cp -fr .Xresources ~/

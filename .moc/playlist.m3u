@@ -1,0 +1,8 @@
+#EXTM3U
+#MOCSERIAL: 256
+#EXTINF:-1,Radio Rock On
+https://streaming.radiostreamlive.com/radiorockon_devices
+#EXTINF:-1,Jazz Radio
+https://jazzradio.ice.infomaniak.ch/jazzradio-high.mp3
+#EXTINF:-1,France Info
+http://icecast.radiofrance.fr/franceinfo-midfi.mp3

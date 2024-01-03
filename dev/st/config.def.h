@@ -7,7 +7,7 @@
 //static char *font = "Hack:size=12";
 //static char *font = "Inconsolata:size=12";
 //static char *font = "terminus:pixelsize=18:antialias=true:autohint=true";
-static char *font = "agave:size=14";
+static char *font = "agave:size=16";
 static int borderpx = 2;
 
 /*

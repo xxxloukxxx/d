@@ -24,7 +24,7 @@ static const char *colors[][3] = {
 };
 
 /* tagging */
-static const char *tags[] = {"Q", "W", "E", "R", "T", "Y", "U", "I", "O"};
+static const char *tags[] = {"Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"};
 
 static const Rule rules[] = {
     /* xprop(1):
@@ -32,7 +32,7 @@ static const Rule rules[] = {
      *	WM_NAME(STRING) = title
      */
     /* class      instance    title       tags mask     isfloating   monitor */
-    {"discord", NULL, NULL, 1 << 8, 0, -1},
+    {"discord", NULL, NULL, 1 << 9, 0, -1},
     {"Jellyfin Media Player", NULL, NULL, 1 << 8, 0, -1},
 };
 
@@ -130,6 +130,7 @@ static const Key keys[] = {
     TAGKEYS(30, 6)													   // u
     TAGKEYS(31, 7)													   // i
     TAGKEYS(32, 8)													   // o
+    TAGKEYS(33, 9)													   // p
     //	{ MODKEY|ShiftMask,     24,     quit,           {0} },          // q
 };
 

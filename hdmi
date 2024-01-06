@@ -1,6 +1,6 @@
 #!/bin/bash
 # a simple logout dialog
-choice=`echo -e "0: HDMI off\n1: HDMI on" | dmenu -fn hack-12 -nb "#000" | cut -d ':' -f 1`
+choice=`echo -e "0: HDMI off\n1: HDMI on" | dmenu | cut -d ':' -f 1`
  
 # execute the choice in background
 case "$choice" in

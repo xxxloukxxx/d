@@ -124,7 +124,7 @@ alias maj="sudo apt-get -y -qq update && sudo apt-get -y -qq full-upgrade && sud
 export NNN_OPTS='de'
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='o:fzopen;m:mocq;c:fzcd;p:preview-tui'
-
+export NNN_TRASH=1
 
 
 n ()

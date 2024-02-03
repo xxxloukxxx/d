@@ -8,10 +8,10 @@
 //static char *font = "Inconsolata:size=12";
 //static char *font = "terminus:pixelsize=18:antialias=true:autohint=true";
 //static char *font = "agave:size=16";
-static char *font = "Liberation Mono:pixelsize=16:antialias=true:autohint=true";
+static char *font = "Liberation Mono:pixelsize=18:antialias=true:autohint=true";
 //static char *font = "DejaVu Sans Mono:pixelsize=14:antialias=true:autohint=true";
 //static char *font = "monospace:pixelsize=12";
-static int borderpx = 2;
+static int borderpx = 0;
 
 /*
  * What program is execed by st depends of these precedence rules:

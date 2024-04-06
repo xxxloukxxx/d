@@ -10,9 +10,7 @@ static const unsigned int systrayonleft  = 0;   /* 0: systray in the right corne
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;        /* 0 means no systray */
-//static const char *fonts[] = {"agave:size=14"};
 static const char *fonts[] = {"Liberation Mono:pixelsize=18:antialias=true:autohint=true"};
-// static const char dmenufont[] = "agave:size=14";
 static const char dmenufont[] = "Liberation Mono:pixelsize=18:antialias=true:autohint=true";
 static const char col_gray1[] = "#222222";
 static const char col_gray2[] = "#444444";
@@ -88,13 +86,13 @@ Binding keys
 */
 static const Key keys[] = {
     /* modifier             key     function        argument */
-//    {0, 121, spawn, {.v = mutevol}},								   // 121 - Mute
-//    {0, 122, spawn, {.v = downvol}},								   // 122 - Voldn
-//    {0, 123, spawn, {.v = upvol}},									   // 123 - Volup
-//    {0, 191, spawn, {.v = dmenucmd}},							       // F13
-//    {0, 192, spawn, {.v = termcmd}},				                   // F14
-//    {MODKEY, 40, spawn, {.v = dmenucmd}},							   // Meta + d
-//    {MODKEY, 36, spawn, {.v = termcmd}},				               // Meta + Return
+    {0, 121, spawn, {.v = mutevol}},								   // 121 - Mute
+    {0, 122, spawn, {.v = downvol}},								   // 122 - Voldn
+    {0, 123, spawn, {.v = upvol}},									   // 123 - Volup
+    {0, 191, spawn, {.v = dmenucmd}},							       // F13
+    {0, 192, spawn, {.v = termcmd}},				                   // F14
+    {MODKEY, 40, spawn, {.v = dmenucmd}},							   // Meta + d
+    {MODKEY, 36, spawn, {.v = termcmd}},				               // Meta + Return
     {MODKEY | ControlMask | ShiftMask, 22, spawn, {.v = shutdowncmd}}, // Meta + Ctrl + Shift + BS
     {MODKEY | ControlMask | ShiftMask, 33, spawn, {.v = pavucmd}},	   // Meta + Ctrl + Shift + p
     {MODKEY | ControlMask | ShiftMask, 39, spawn, {.v = flamecmd}},	   // Meta + Ctrl + Shift + s

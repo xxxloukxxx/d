@@ -16,6 +16,7 @@ all:
 	cp -fr .w ~/
 	cp -fr .dwm ~/
 	cp -fr .fonts ~/
+	cp -fr .config ~/
 	fc-cache -r
 	cp -fr .vimrc ~/
 	cp -fr .moc ~/
@@ -24,7 +25,6 @@ all:
 	cp -fr .Xresources ~/
 	cp -fr .latexmkrc ~/
 	sudo cp -fr hdmi /usr/bin/
-	
 
 	echo "\n>>> Install dwm, st and friends"
 	sudo make -C dev clean install --silent

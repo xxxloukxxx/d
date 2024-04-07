@@ -77,8 +77,10 @@ d-i grub-installer/bootdev string default
 ##################################
 
 d-i preseed/late_command string \
+cd /target/home/cedric/; \
 wget https://github.com/xxxloukxxx/d/archive/main.tar.gz; \
 tar xzf main.tar.gz; \
+rm -fr  main.tar.gz; \
 in-target gpasswd -a cedric sudo;
 
 
@@ -92,7 +94,6 @@ in-target gpasswd -a cedric sudo;
 # cd /target/etc/; \
 # rm -fr sudoers; \
 # wget https://raw.githubusercontent.com/xxxloukxxx/d/main/.install/sudoers; \
-# cd /target/home/cedric/; \
 
 
 ##################################

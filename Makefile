@@ -4,7 +4,7 @@ all:
 	sudo cp -fr .install/sudoers /etc/sudoers
 	sudo apt -qq -y update
 	sudo apt -qq -y full-upgrade
-	sudo apt -qq -y install micro nnn vim zsh lightdm xorg okular zathura chromium chromium-l10n suckless-tools 'fonts-hac*' 'fonts-libe*' eog caja dunst flameshot trash-cli
+	sudo apt -qq -y install micro nnn vim zsh lightdm dwm stterm xorg okular zathura chromium chromium-l10n suckless-tools 'fonts-hac*' 'fonts-libe*' eog caja dunst flameshot trash-cli
 
 	echo "\n>>> Install zsh, vim and friends"
 	sudo apt -qq -y install git curl wget xinit feh tmux fonts-font-awesome fonts-terminus-otb x11-utils libreadline-dev libx11-dev libxinerama-dev libxft-dev numlockx fzf fd-find bat tree ripgrep btop locales-all build-essential gcc rsstail fonts-agave slock trash-cli

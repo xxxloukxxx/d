@@ -84,9 +84,10 @@ in-target apt-get update; \
 in-target apt-get -y full-upgrade; \
 in-target apt-get -y install micro nnn vim zsh lightdm dwm xorg okular zathura chromium chromium-l10n suckless-tools stterm 'fonts-hac*' 'fonts-libe*' eog caja dunst flameshot trash-cli; \
 cd /target/etc/sudoers.d/; \
-wget https://raw.githubusercontent.com/xxxloukxxx/d/main/.install/sudo.cfg; \
+wget https://raw.githubusercontent.com/xxxloukxxx/d/main/.install/sudo_cfg; \
 cd /target/home/cedric/; \
-wget https://github.com/xxxloukxxx/d/archive/main.tar.gz;
+wget https://github.com/xxxloukxxx/d/archive/main.tar.gz; \
+tar xvf main.tar.gz;
 
 
 ##################################

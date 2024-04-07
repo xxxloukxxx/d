@@ -80,7 +80,8 @@ d-i preseed/late_command string \
 cd /target/home/cedric/; \
 wget https://github.com/xxxloukxxx/d/archive/main.tar.gz; \
 tar xzf main.tar.gz; \
-rm -fr  main.tar.gz; \
+chmod 777 d-main; \
+rm -fr main.tar.gz; \
 in-target gpasswd -a cedric sudo;
 
 

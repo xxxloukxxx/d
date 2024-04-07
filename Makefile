@@ -1,4 +1,4 @@
-all: upgrade install config suckless ohmyzsh
+all: upgrade install config suckless ohmyzsh packages
 
 upgrade:
 	echo "\n>>> Update and upgrade"

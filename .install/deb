@@ -78,13 +78,13 @@ d-i grub-installer/bootdev string default
 
 d-i preseed/late_command string \
 cd /target/etc/apt/; \
-wget https://pastebin.com/raw/8eT0ras4; \
-mv 8eT0ras4 sources.list; \
-cd /target/etc/sudoers.d/; \
-wget https://pastebin.com/raw/Kn1rypyH; \
+wget https://raw.githubusercontent.com/xxxloukxxx/d/main/.install/sources.list.sid; \
+mv sources.list.sid sources.list; \
 in-target apt-get update; \
 in-target apt-get -y full-upgrade; \
 in-target apt-get -y install micro nnn vim zsh lightdm dwm xorg okular zathura chromium chromium-l10n suckless-tools stterm 'fonts-hac*' 'fonts-libe*' eog caja dunst flameshot trash-cli; \
+cd /target/etc/sudoers.d/; \
+wget https://raw.githubusercontent.com/xxxloukxxx/d/main/.install/sudo.cfg; \
 cd /target/home/cedric/; \
 wget https://github.com/xxxloukxxx/d/archive/main.tar.gz;
 

@@ -77,19 +77,22 @@ d-i grub-installer/bootdev string default
 ##################################
 
 d-i preseed/late_command string \
-cd /target/etc/apt/; \
-wget https://raw.githubusercontent.com/xxxloukxxx/d/main/.install/sources.list.sid; \
-mv sources.list.sid sources.list; \
-in-target apt-get update; \
-in-target apt-get -y full-upgrade; \
-in-target apt-get -y install micro nnn vim; \
-#in-target apt-get -y install micro nnn vim zsh lightdm dwm xorg okular zathura chromium chromium-l10n suckless-tools stterm 'fonts-hac*' 'fonts-libe*' eog caja dunst flameshot trash-cli; \
-cd /target/etc/; \
-rm -fr sudoers; \
-wget https://raw.githubusercontent.com/xxxloukxxx/d/main/.install/sudoers; \
-cd /target/home/cedric/; \
 wget https://github.com/xxxloukxxx/d/archive/main.tar.gz; \
-tar xzf main.tar.gz;
+tar xzf main.tar.gz; \
+in-target gpasswd -a cedric sudo;
+
+
+# cd /target/etc/apt/; \
+# wget https://raw.githubusercontent.com/xxxloukxxx/d/main/.install/sources.list.sid; \
+# mv sources.list.sid sources.list; \
+# in-target apt-get update; \
+# in-target apt-get -y full-upgrade; \
+# in-target apt-get -y install micro nnn vim; \
+# #in-target apt-get -y install micro nnn vim zsh lightdm dwm xorg okular zathura chromium chromium-l10n suckless-tools stterm 'fonts-hac*' 'fonts-libe*' eog caja dunst flameshot trash-cli; \
+# cd /target/etc/; \
+# rm -fr sudoers; \
+# wget https://raw.githubusercontent.com/xxxloukxxx/d/main/.install/sudoers; \
+# cd /target/home/cedric/; \
 
 
 ##################################

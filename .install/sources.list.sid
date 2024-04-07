@@ -1,2 +1,2 @@
-deb https://deb.debian.org/debian/ unstable main contrib non-free
-deb-src https://deb.debian.org/debian/ unstable main contrib non-free
+deb https://ftp.debian.org/debian/ sid contrib main non-free non-free-firmware
+deb-src https://ftp.debian.org/debian/ sid contrib main non-free non-free-firmware

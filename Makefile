@@ -9,7 +9,8 @@ all:
 
 	echo "\n>>> Install zsh, vim and friends"
 	sudo apt -qq -y install git curl wget xinit feh tmux fonts-font-awesome fonts-terminus-otb x11-utils libreadline-dev libx11-dev libxinerama-dev libxft-dev numlockx fzf fd-find bat tree ripgrep btop locales-all build-essential gcc rsstail fonts-agave slock trash-cli
-	rm -fr "~/.oh-my-zsh" 2> /dev/null
+	sudo apt -qq -y autoremove
+	rm -fr "/home/cedric/.oh-my-zsh" 2> /dev/null
 	wget -q "https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh"
 	chmod +x ./install.sh
 	./install.sh --unattended

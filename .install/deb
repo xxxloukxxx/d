@@ -1,0 +1,94 @@
+##################################
+# t.ly/d1dQh
+##################################
+
+d-i debian-installer/locale string fr_FR.UTF-8
+# d-i keyboard-configuration/xkb-keymap select fr(latin9)
+
+# Locale setting.
+# d-i debian-installer/language string fr
+# d-i debian-installer/country string FR
+# Keyboard.
+# d-i console-keymaps-at/keymap select fr-latin9
+
+#d-i debian-installer/locale string fr_FR
+#d-i debian-installer/language string fr
+#d-i debian-installer/country string FR
+#d-i localechooser/supported-locales multiselect en_US.UTF-8, fr_FR.UTF-8
+#d-i keyboard-configuration/xkb-keymap select fr(latin9)
+
+##################################
+
+d-i netcfg/choose_interface select auto
+d-i netcfg/get_hostname string unassigned-hostname
+d-i netcfg/get_domain string unassigned-domain
+
+##################################
+
+d-i mirror/country string manual
+d-i mirror/http/hostname string deb.debian.org
+d-i mirror/http/directory string /debian/
+d-i mirror/http/proxy string
+#d-i mirror/suite string testing
+#d-i mirror/udeb/suite string testing
+
+##################################
+
+d-i passwd/root-password password plop
+d-i passwd/root-password-again password plop
+
+d-i passwd/user-fullname string Cedric
+d-i passwd/username string cedric
+d-i passwd/user-password password plop
+d-i passwd/user-password-again password plop
+
+##################################
+
+d-i clock-setup/utc boolean true
+d-i time/zone string Europe/Paris
+d-i clock-setup/ntp boolean true
+
+##################################
+
+d-i partman-auto/init_automatically_partition select Guided - use entire disk
+d-i partman-auto/disk string /dev/sda
+d-i partman-auto/method string regular
+d-i partman-lvm/device_remove_lvm boolean true
+d-i partman-md/device_remove_md boolean true
+d-i partman-auto/choose_recipe select All files in one partition (recommended for new users)
+d-i partman/confirm_write_new_label boolean true
+d-i partman/confirm boolean  true
+d-i partman/choose_partition select Finish partitioning and write changes to disk
+d-i partman/confirm_nooverwrite boolean true
+
+##################################
+
+tasksel tasksel/first multiselect standard
+d-i pkgsel/include string sudo git make
+d-i pkgsel/upgrade select full-upgrade
+popularity-contest popularity-contest/participate boolean false
+
+##################################
+
+d-i grub-installer/only_debian boolean true
+d-i grub-installer/with_other_os boolean true
+d-i grub-installer/bootdev string default
+
+##################################
+
+d-i preseed/late_command string \
+cd /target/etc/apt/; \
+wget https://pastebin.com/raw/8eT0ras4; \
+mv 8eT0ras4 sources.list; \
+cd /target/etc/sudoers.d/; \
+wget https://pastebin.com/raw/Kn1rypyH; \
+in-target apt-get update; \
+in-target apt-get -y full-upgrade; \
+in-target apt-get -y install micro nnn vim zsh lightdm dwm xorg okular zathura chromium chromium-l10n suckless-tools stterm 'fonts-hac*' 'fonts-libe*' eog caja dunst flameshot trash-cli; \
+cd /target/home/cedric/; \
+wget https://github.com/xxxloukxxx/d/archive/main.tar.gz;
+
+
+##################################
+
+d-i finish-install/reboot_in_progress note

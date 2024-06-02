@@ -1,7 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
 /* appearance */
-static const unsigned int borderpx = 2; /* border pixel of windows */
+static const unsigned int borderpx = 3; /* border pixel of windows */
 static const unsigned int snap = 32;	/* snap pixel */
 static const int showbar = 1;			/* 0 means no bar */
 static const int topbar = 0;			/* 0 means bottom bar */
@@ -10,21 +10,24 @@ static const unsigned int systrayonleft  = 0;   /* 0: systray in the right corne
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;        /* 0 means no systray */
-static const char *fonts[] = {"Liberation Mono:pixelsize=18:antialias=true:autohint=true"};
-static const char dmenufont[] = "Liberation Mono:pixelsize=18:antialias=true:autohint=true";
-static const char col_gray1[] = "#222222";
+static const char *fonts[] = {"monospace:pixelsize=20"};
+//static const char *fonts[] = {"Liberation Mono:pixelsize=18:antialias=true:autohint=true"};
+static const char dmenufont[] = "monospace:pixelsize=20";
+//static const char dmenufont[] = "Liberation Mono:pixelsize=18:antialias=true:autohint=true";
+//static const char col_gray1[] = "#222222";
+static const char col_gray1[] = "#000000";
 static const char col_gray2[] = "#444444";
 static const char col_gray3[] = "#bbbbbb";
 static const char col_gray4[] = "#eeeeee";
-static const char col_cyan[] = "#005577";
+static const char col_cyan[] = "#002244";
 static const char *colors[][3] = {
     /*               fg         bg         border   */
     [SchemeNorm] = {col_gray3, col_gray1, col_gray2},
-    [SchemeSel] = {col_gray4, col_cyan, "#ff0000"},
+    [SchemeSel] = {col_gray4, col_cyan, "#770000"},
 };
 
 /* tagging */
-static const char *tags[] = {"Q", "W", "E", "R", "T", "Y", "U", "I", "O", "P"};
+static const char *tags[] = {"Q", "W", "E", "R", "T", "Y", "U", "I", "O"};
 
 static const Rule rules[] = {
     /* xprop(1):
@@ -32,8 +35,8 @@ static const Rule rules[] = {
      *	WM_NAME(STRING) = title
      */
     /* class      instance    title       tags mask     isfloating   monitor */
-    {"discord", NULL, NULL, 1 << 9, 0, -1},
-    {"Jellyfin Media Player", NULL, NULL, 1 << 8, 0, -1},
+    {"discord", NULL, NULL, 1 << 8, 0, -1},
+//    {"Jellyfin Media Player", NULL, NULL, 1 << 7, 0, -1},
 };
 
 /* layout(s) */
@@ -71,7 +74,7 @@ static const char *shutdowncmd[] = {"/home/cedric/.dwm/powermenu.sh", NULL};
 static const char *pavucmd[] = {"pavucontrol", NULL};
 static const char *flamecmd[] = {"flameshot", "gui", NULL};
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x34", NULL };
+static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x40", NULL };
 
 /*
 Volume by multimedia keys
@@ -89,28 +92,31 @@ static const Key keys[] = {
     {0, 121, spawn, {.v = mutevol}},								   // 121 - Mute
     {0, 122, spawn, {.v = downvol}},								   // 122 - Voldn
     {0, 123, spawn, {.v = upvol}},									   // 123 - Volup
-    {0, 191, spawn, {.v = dmenucmd}},							       // F13
-    {0, 192, spawn, {.v = termcmd}},				                   // F14
-    {MODKEY, 40, spawn, {.v = dmenucmd}},							   // Meta + d
-    {MODKEY, 36, spawn, {.v = termcmd}},				               // Meta + Return
+//    {0, 191, spawn, {.v = dmenucmd}},							       // F13
+//    {0, 192, spawn, {.v = termcmd}},				                   // F14
+    {MODKEY, 33, spawn, {.v = dmenucmd}},							   // Meta + p
+//    {MODKEY, 40, spawn, {.v = dmenucmd}},							   // Meta + d
+    {MODKEY | ShiftMask , 36, spawn, {.v = termcmd}},	               // Meta + Shift + Return
+//    {MODKEY, 36, spawn, {.v = termcmd}},				               // Meta + Return
     {MODKEY | ControlMask | ShiftMask, 22, spawn, {.v = shutdowncmd}}, // Meta + Ctrl + Shift + BS
     {MODKEY | ControlMask | ShiftMask, 33, spawn, {.v = pavucmd}},	   // Meta + Ctrl + Shift + p
     {MODKEY | ControlMask | ShiftMask, 39, spawn, {.v = flamecmd}},	   // Meta + Ctrl + Shift + s
     {MODKEY, 9, togglescratch, {.v = scratchpadcmd }},                 // Meta + Esc
-    {MODKEY, 44, focusstack, {.i = +1}},							   // Meta + j
-    {MODKEY, 45, focusstack, {.i = -1}},							   // Meta + k
-    {MODKEY, 113, focusstack, {.i = +1}},							   // Meta + Left
-    {MODKEY, 114, focusstack, {.i = -1}},							   // Meta + Right
+//    {MODKEY, 44, focusstack, {.i = +1}},							   // Meta + j
+//    {MODKEY, 45, focusstack, {.i = -1}},							   // Meta + k
+    {MODKEY, 113, focusstack, {.i = -1}},							   // Meta + Left
+    {MODKEY, 114, focusstack, {.i = +1}},							   // Meta + Right
     {MODKEY, 43, setmfact, {.f = -0.05}},							   // Meta + h
     {MODKEY, 46, setmfact, {.f = +0.05}},							   // Meta + l
-    {MODKEY | ShiftMask, 36, zoom, {0}},							   // Meta + Shift + Return
+    {MODKEY, 36, zoom, {0}},										   // Meta + Return
+//    {MODKEY | ShiftMask, 36, zoom, {0}},							   // Meta + Shift + Return
     {MODKEY, 23, view, {0}},										   // Meta + Tab
     {MODKEY | ShiftMask, 54, killclient, {0}},						   // Meta + Shift + c
-    {MODKEY, 65, setlayout, {0}},									   // Meta + Shift + space
+    {MODKEY, 65, setlayout, {0}},									   // Meta + Space
     {MODKEY | ShiftMask, 57, setlayout, {.v = &layouts[0]}},		   // Meta + Shift + n
     {MODKEY | ShiftMask, 56, setlayout, {.v = &layouts[1]}},		   // Meta + Shift + b
     {MODKEY | ShiftMask, 58, setlayout, {.v = &layouts[2]}},		   // Meta + Shift + m
-    {MODKEY | ShiftMask, 65, togglefloating, {0}},					   // space
+    {MODKEY | ShiftMask, 65, togglefloating, {0}},					   // Meta + Shift + Space
     {MODKEY, 59, focusmon, {.i = -1}},								   // Meta + comma
     {MODKEY, 60, focusmon, {.i = +1}},								   // Meta + period
     {MODKEY | ShiftMask, 59, tagmon, {.i = -1}},					   // Meta + Shift + comma
@@ -124,7 +130,7 @@ static const Key keys[] = {
     TAGKEYS(30, 6)													   // Meta (+ Shift) + u
     TAGKEYS(31, 7)													   // Meta (+ Shift) + i
     TAGKEYS(32, 8)													   // Meta (+ Shift) + o
-    TAGKEYS(33, 9)													   // Meta (+ Shift) + p
+//    TAGKEYS(33, 9)													   // Meta (+ Shift) + p
 };
 
 /* button definitions */

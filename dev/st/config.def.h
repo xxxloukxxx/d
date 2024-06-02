@@ -8,9 +8,9 @@
 //static char *font = "Inconsolata:size=12";
 //static char *font = "terminus:pixelsize=18:antialias=true:autohint=true";
 //static char *font = "agave:size=16";
-static char *font = "Liberation Mono:pixelsize=18:antialias=true:autohint=true";
+//static char *font = "Liberation Mono:pixelsize=18:antialias=true:autohint=true";
 //static char *font = "DejaVu Sans Mono:pixelsize=14:antialias=true:autohint=true";
-//static char *font = "monospace:pixelsize=12";
+static char *font = "monospace:pixelsize=20";
 static int borderpx = 0;
 
 /*
@@ -101,7 +101,8 @@ unsigned int tabspaces = 8;
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
   /* 8 normal colors */
-  [0] = "#282a2e", /* black   */
+//  [0] = "#282a2e", /* black   */
+  [0] = "#000000", /* black   */
   [1] = "#a54242", /* red     */
   [2] = "#8c9440", /* green   */
   [3] = "#de935f", /* yellow  */
@@ -121,7 +122,8 @@ static const char *colorname[] = {
   [15] = "#c5c8c6", /* white   */
 
   /* special colors */
-  [256] = "#1d1f21", /* background */
+  //[256] = "#1d1f21", /* background */
+  [256] = "#000000", /* background */
   [257] = "#c5c8c6", /* foreground */  
 };
 

@@ -1,5 +1,5 @@
 {
     "autosu": true,
-    "softwrap": true,
-    "wordwrap": true
+    "colorscheme": "cmc-16",
+    "softwrap": true
 }

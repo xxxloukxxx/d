@@ -11,7 +11,7 @@ Xft.hintstyle: hintslight
 
 Xcursor.size: 48
 
-xterm*faceName: hack-12
+xterm*faceName: monospace-12
 
 ! xterm
 xterm*dynamiccolors:      true
@@ -32,7 +32,8 @@ xterm*scrollKey:       true
 
 ! special
 *.foreground:   #c5c8c6
-*.background:   #1d1f21
+*.background:   #000000
+!*.background:   #1d1f21
 *.cursorColor:  #c5c8c6
 
 ! black

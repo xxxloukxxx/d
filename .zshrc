@@ -73,7 +73,7 @@ zstyle ':omz:update' frequency 5
 plugins=(themes git tmux fzf debian z fd zsh-syntax-highlighting zsh-autosuggestions)
 
 apt_pref='apt'
-apt_upgr='full-upgrade'
+apt_upgr='upgrade'
 
 source $ZSH/oh-my-zsh.sh
 
@@ -106,20 +106,21 @@ alias zshconfig="micro ~/.zshrc"
 export EDITOR=micro
 export VISUAL=micro
 
-alias ls='ls --color=auto'
+alias ls='lsd --color=auto'
 alias grep='grep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias diff='diff --color=auto'
 
-alias l="ls -lh"
+alias l="lsd -lh"
 alias bat="batcat"
 alias du="du -h"
 alias df="df -h"
 
 alias lazygit="git add . && git commit -m \"$(date)\" && git push"
+alias make_and_push="make && lazygit"
 
-alias maj="sudo apt-get -y -qq update && sudo apt-get -y -qq full-upgrade && sudo apt-get -y -qq autoremove && sudo aptitude -y -q=5 autoclean && sudo aptitude -y -q=5 purge"
+alias maj="sudo apt-get -y -qq update && sudo apt-get -y -qq upgrade"
 
 export NNN_OPTS='de'
 export NNN_FIFO=/tmp/nnn.fifo

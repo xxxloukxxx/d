@@ -5,12 +5,12 @@
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
 //static char *font = "Hack:size=12";
-//static char *font = "Inconsolata:size=12";
+static char *font = "Inconsolata:size=18";
 //static char *font = "terminus:pixelsize=18:antialias=true:autohint=true";
 //static char *font = "agave:size=16";
 //static char *font = "Liberation Mono:pixelsize=18:antialias=true:autohint=true";
 //static char *font = "DejaVu Sans Mono:pixelsize=14:antialias=true:autohint=true";
-static char *font = "monospace:pixelsize=20";
+//static char *font = "monospace:pixelsize=20";
 static int borderpx = 0;
 
 /*

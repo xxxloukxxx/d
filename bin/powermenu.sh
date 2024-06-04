@@ -2,7 +2,7 @@
 
 function powermenu {
     options="Shutdown\nReboot\nLock"
-    selected=$(echo -e $options | dmenu -b)
+    selected=$(echo -e $options | dmenu)
 
     if [[ $selected = "Shutdown" ]]; then sudo poweroff
     elif [[ $selected = "Reboot" ]]; then sudo reboot

@@ -10,12 +10,14 @@ static const unsigned int systrayonleft  = 0;   /* 0: systray in the right corne
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;        /* 0 means no systray */
-static const char *fonts[] = {"Inconsolata:size=16"};
+static const char *fonts[] = {"Firacode Nerd Font Mono:size=16"};
+//static const char *fonts[] = {"Inconsolata:size=16"};
 //static const char *fonts[] = {"Liberation Mono:pixelsize=18:antialias=true:autohint=true"};
-static const char dmenufont[] = "Inconsolata:size=16";
+static const char dmenufont[] = "Firacode Nerd Font Mono:size=16";
+//static const char dmenufont[] = "Inconsolata:size=16";
 //static const char dmenufont[] = "Liberation Mono:pixelsize=18:antialias=true:autohint=true";
 //static const char col_gray1[] = "#222222";
-static const char col_gray1[] = "#090213";
+static const char col_gray1[] = "#010309";
 //static const char col_gray1[] = "#000000";
 static const char col_gray2[] = "#444444";
 static const char col_gray3[] = "#bbbbbb";

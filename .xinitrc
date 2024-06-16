@@ -14,6 +14,7 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 # Wallpaper, status and dunst 
 # feh --randomize --bg-fill ~/.w &
 slstatus 2>&1 >/dev/null &
+xsetroot -solid "#010309"
 dunst &
 
 # Start dwm

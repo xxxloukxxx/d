@@ -2,7 +2,7 @@ all: upgrade install config suckless ohmyzsh packages
 
 upgrade:
 	echo "\n>>> Update and upgrade"
-	sudo cp -fr .install/sources.list.sid /etc/apt/sources.list
+	# sudo cp -fr .install/sources.list.sid /etc/apt/sources.list
 	sudo cp -fr .install/sudoers /etc/sudoers
 	sudo apt -qq -y update
 	sudo apt -qq -y full-upgrade

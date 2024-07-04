@@ -888,8 +888,8 @@ main(int argc, char *argv[])
 		else if (!strcmp(argv[i], "-s")) { /* case-sensitive item matching */
 			fstrncmp = strncmp;
 			fstrstr = strstr;
-		} else if (!strcmp(argv[i], "-n")) /* instant select only match */
-			instant = 1;
+		} else if (!strcmp(argv[i], "-n")) /* DO NOT instant select only match */
+			instant = 0;
 		else if (i + 1 == argc)
 			usage();
 		/* these options take one argument */

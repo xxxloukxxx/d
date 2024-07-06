@@ -78,7 +78,7 @@ static const char *pavucmd[] = {"pavucontrol", NULL};
 static const char *displaycmd[] = {"display-config", NULL};
 static const char *flamecmd[] = {"flameshot", "gui", NULL};
 static const char scratchpadname[] = "scratchpad";
-static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "120x30", NULL };
+static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x25", NULL };
 
 /*
 Volume by multimedia keys

@@ -5,20 +5,11 @@ static const unsigned int borderpx = 3; /* border pixel of windows */
 static const unsigned int snap = 32;	/* snap pixel */
 static const int showbar = 1;			/* 0 means no bar */
 static const int topbar = 0;			/* 0 means bottom bar */
-static const unsigned int systraypinning = 0;   /* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
-static const unsigned int systrayonleft  = 0;   /* 0: systray in the right corner, >0: systray on left of status text */
-static const unsigned int systrayspacing = 2;   /* systray spacing */
-static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
-static const int showsystray        = 1;        /* 0 means no systray */
+
+
 static const char *fonts[] = {"Firacode Nerd Font Mono:size=14"};
-//static const char *fonts[] = {"Inconsolata:size=16"};
-//static const char *fonts[] = {"Liberation Mono:pixelsize=18:antialias=true:autohint=true"};
 static const char dmenufont[] = "Firacode Nerd Font Mono:size=14";
-//static const char dmenufont[] = "Inconsolata:size=16";
-//static const char dmenufont[] = "Liberation Mono:pixelsize=18:antialias=true:autohint=true";
-//static const char col_gray1[] = "#222222";
-static const char col_gray1[] = "#000";
-//static const char col_gray1[] = "#000000";
+static const char col_gray1[] = "#000000";
 static const char col_gray2[] = "#444444";
 static const char col_gray3[] = "#bbbbbb";
 static const char col_gray4[] = "#eeeeee";
@@ -28,6 +19,20 @@ static const char *colors[][3] = {
     [SchemeNorm] = {col_gray3, col_gray1, col_gray2},
     [SchemeSel] = {col_gray4, col_cyan, "#770000"},
 };
+
+
+/* Systray */
+static const unsigned int systraypinning = 0;
+/* 0: sloppy systray follows selected monitor, >0: pin systray to monitor X */
+static const unsigned int systrayonleft  = 0;
+/* 0: systray in the right corner, >0: systray on left of status text */
+static const unsigned int systrayspacing = 2;
+/* systray spacing */
+static const int systraypinningfailfirst = 1;
+/* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
+static const int showsystray        = 1;
+/* 0 means no systray */
+
 
 /* tagging */
 static const char *tags[] = {"Q", "W", "E", "R", "T", "Y", "U", "I", "O"};
@@ -39,8 +44,8 @@ static const Rule rules[] = {
      */
     /* class      instance    title       tags mask     isfloating   monitor */
     {"discord", NULL, NULL, 1 << 8, 0, -1},
-//    {"Jellyfin Media Player", NULL, NULL, 1 << 7, 0, -1},
 };
+
 
 /* layout(s) */
 static const float mfact = 0.618; /* factor of master area size [0.05..0.95] */
@@ -55,19 +60,20 @@ static const Layout layouts[] = {
     {"[M]", monocle},
 };
 
+
 /* key definitions */
 #define MODKEY Mod4Mask
 #define TAGKEYS(KEY, TAG)                  \
 	{MODKEY, KEY, view, {.ui = 1 << TAG}}, \
-	{MODKEY | ShiftMask, KEY, tag, {.ui = 1 << TAG}}, //\
-//	{ MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
-//	{ MODKEY|ControlMask|ShiftMask, KEY,      toggletag,      {.ui = 1 << TAG} },
+	{MODKEY | ShiftMask, KEY, tag, {.ui = 1 << TAG}},
+
 
 /* helper for spawning shell commands in the pre dwm-5.0 fashion */
 #define SHCMD(cmd)                                           \
 	{                                                        \
 		.v = (const char *[]) { "/bin/sh", "-c", cmd, NULL } \
 	}
+
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
@@ -80,41 +86,32 @@ static const char *flamecmd[] = {"flameshot", "gui", NULL};
 static const char scratchpadname[] = "scratchpad";
 static const char *scratchpadcmd[] = { "st", "-t", scratchpadname, "-g", "80x25", NULL };
 
-/*
-Volume by multimedia keys
-*/
+
+/* Volume by multimedia keys */
 #include <X11/XF86keysym.h>
 static const char *upvol[] = {"/usr/bin/pactl", "set-sink-volume", "0", "+5%", NULL};
 static const char *downvol[] = {"/usr/bin/pactl", "set-sink-volume", "0", "-5%", NULL};
 static const char *mutevol[] = {"/usr/bin/pactl", "set-sink-mute", "0", "toggle", NULL};
 
-/*
-Binding keys
-*/
+
+/* Binding keys */
 static const Key keys[] = {
     /* modifier             key     function        argument */
     {0, 121, spawn, {.v = mutevol}},								   // 121 - Mute
     {0, 122, spawn, {.v = downvol}},								   // 122 - Voldn
     {0, 123, spawn, {.v = upvol}},									   // 123 - Volup
-//    {0, 191, spawn, {.v = dmenucmd}},							       // F13
-//    {0, 192, spawn, {.v = termcmd}},				                   // F14
     {MODKEY, 33, spawn, {.v = dmenucmd}},							   // Meta + p
-//    {MODKEY, 40, spawn, {.v = dmenucmd}},							   // Meta + d
     {MODKEY | ShiftMask , 36, spawn, {.v = termcmd}},	               // Meta + Shift + Return
-//    {MODKEY, 36, spawn, {.v = termcmd}},				               // Meta + Return
     {MODKEY | ControlMask | ShiftMask, 22, spawn, {.v = shutdowncmd}}, // Meta + Ctrl + Shift + BS
     {MODKEY | ControlMask | ShiftMask, 33, spawn, {.v = pavucmd}},	   // Meta + Ctrl + Shift + p
     {MODKEY | ControlMask | ShiftMask, 32, spawn, {.v = displaycmd}},  // Meta + Ctrl + Shift + o
     {MODKEY | ControlMask | ShiftMask, 39, spawn, {.v = flamecmd}},	   // Meta + Ctrl + Shift + s
     {MODKEY, 9, togglescratch, {.v = scratchpadcmd }},                 // Meta + Esc
-//    {MODKEY, 44, focusstack, {.i = +1}},							   // Meta + j
-//    {MODKEY, 45, focusstack, {.i = -1}},							   // Meta + k
     {MODKEY, 113, focusstack, {.i = -1}},							   // Meta + Left
     {MODKEY, 114, focusstack, {.i = +1}},							   // Meta + Right
     {MODKEY, 43, setmfact, {.f = -0.05}},							   // Meta + h
     {MODKEY, 46, setmfact, {.f = +0.05}},							   // Meta + l
     {MODKEY, 36, zoom, {0}},										   // Meta + Return
-//    {MODKEY | ShiftMask, 36, zoom, {0}},							   // Meta + Shift + Return
     {MODKEY, 23, view, {0}},										   // Meta + Tab
     {MODKEY | ShiftMask, 54, killclient, {0}},						   // Meta + Shift + c
     {MODKEY, 65, setlayout, {0}},									   // Meta + Space
@@ -135,7 +132,6 @@ static const Key keys[] = {
     TAGKEYS(30, 6)													   // Meta (+ Shift) + u
     TAGKEYS(31, 7)													   // Meta (+ Shift) + i
     TAGKEYS(32, 8)													   // Meta (+ Shift) + o
-//    TAGKEYS(33, 9)													   // Meta (+ Shift) + p
 };
 
 /* button definitions */

@@ -1,5 +1,5 @@
 #!/bin/bash
-choice=`echo -e "0: LEFT/RIGHT\n1: LEFT/(right)\n2: (left)/RIGHT" | dmenu | cut -d ':' -f 1`
+choice=`echo -e "0: LEFT/RIGHT\n1: LEFT/(right)\n2: (left)/RIGHT" | dmenu -n | cut -d ':' -f 1`
  
 # execute the choice in background
 case "$choice" in

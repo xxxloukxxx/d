@@ -55,7 +55,7 @@ suckless:
 
 packages:
 	echo "\n>>> Install some packages"
-	sudo apt -qq -y install gimp firefox firefox-l10n-fr texlive-full chromium chromium-l10n evince okular pdftk imagemagick
+	sudo apt -qq -y install gimp firefox-esr firefox-esr-l10n-fr texlive-full chromium chromium-l10n evince okular pdftk imagemagick
 
 
 .SILENT:

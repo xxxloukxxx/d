@@ -17,7 +17,7 @@ static const char col_cyan[] = "#002244";
 static const char *colors[][3] = {
     /*               fg         bg         border   */
     [SchemeNorm] = {col_gray3, col_gray1, col_gray2},
-    [SchemeSel] = {col_gray4, col_cyan, "#770000"},
+    [SchemeSel] = {col_gray4, col_cyan, "#aa0000"},
 };
 
 
@@ -123,6 +123,10 @@ static const Key keys[] = {
     {MODKEY, 60, focusmon, {.i = +1}},								   // Meta + period
     {MODKEY | ShiftMask, 59, tagmon, {.i = -1}},					   // Meta + Shift + comma
     {MODKEY | ShiftMask, 60, tagmon, {.i = +1}},					   // Meta + Shift + period
+    {MODKEY, 110, focusmon, {.i = -1}},								   // Meta + comma
+    {MODKEY, 115, focusmon, {.i = +1}},								   // Meta + period
+    {MODKEY | ShiftMask, 110, tagmon, {.i = -1}},					   // Meta + Shift + comma
+    {MODKEY | ShiftMask, 115, tagmon, {.i = +1}},					   // Meta + Shift + period
     TAGKEYS(24, 0)													   // Meta (+ Shift) + q
     TAGKEYS(25, 1)													   // Meta (+ Shift) + w
     TAGKEYS(26, 2)													   // Meta (+ Shift) + e

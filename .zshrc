@@ -101,7 +101,7 @@ export LANG=fr_FR.UTF-8
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="micro ~/.zshrc"
+alias zshconfig="e ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 export EDITOR=micro

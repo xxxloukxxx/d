@@ -121,7 +121,7 @@ alias df="df -h"
 alias e="micro"
 
 alias lgit="git add . && git commit -m \"$(date)\" && git push"
-alias make_and_push="make && lazygit"
+alias make_and_push="make && lgit"
 
 alias maj="sudo apt-get -y -qq update && sudo apt-get -y -qq upgrade"
 

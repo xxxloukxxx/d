@@ -8,8 +8,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-# ZSH_THEME="avit"
-ZSH_THEME="minimal"
+ZSH_THEME="avit"
+#ZSH_THEME="minimal"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -104,8 +104,8 @@ export LANG=fr_FR.UTF-8
 alias zshconfig="e ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-export EDITOR=micro
-export VISUAL=micro
+export EDITOR=nvim
+export VISUAL=nvim
 
 alias ls='lsd --color=auto'
 alias grep='grep --color=auto'
@@ -118,14 +118,14 @@ alias bat="batcat"
 alias du="du -h"
 alias df="df -h"
 
-alias e="micro"
+alias e="nvim"
 
 alias lgit="git add . && git commit -m \"$(date)\" && git push"
 alias make_and_push="make && lgit"
 
 alias maj="sudo apt-get -y -qq update && sudo apt-get -y -qq upgrade"
 
-export NNN_OPTS='de'
+export NNN_OPTS='der'
 export NNN_FIFO=/tmp/nnn.fifo
 export NNN_PLUG='o:fzopen;m:mocq;c:fzcd;p:preview-tui'
 export NNN_TRASH=1

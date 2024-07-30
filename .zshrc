@@ -71,7 +71,7 @@ zstyle ':omz:update' frequency 5
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(themes git universalarchive web-search tmux fzf debian z zsh-syntax-highlighting zsh-autosuggestions)
+plugins=(themes git extract universalarchive web-search tmux fzf debian z zsh-syntax-highlighting zsh-autosuggestions)
 
 apt_pref='apt'
 apt_upgr='upgrade'

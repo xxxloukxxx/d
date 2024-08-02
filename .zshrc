@@ -120,6 +120,8 @@ alias df="df -h"
 
 alias e="nvim"
 
+alias zz="zathura --fork"
+
 alias lgit="git add . && git commit -m \"$(date)\" && git push"
 alias make_and_push="make && lgit"
 
